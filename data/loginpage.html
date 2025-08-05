@@ -1,0 +1,23 @@
+<html>
+	<head lang="ru">
+		<title>Controller config</title>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<link rel="stylesheet nofollow" href="loginstyle.css">
+	</head>
+	<body>
+		<div id="log_form" class="login-form">
+			<label for="login">Имя пользователя</label>
+			<input id="login" name="username" type="text" required>
+			<label for="password">Пароль</label>
+			<div class="password-zone">
+				<input id="password" name="password" type="password" required>
+				<input id="password_show" type="checkbox" onclick="showPassword()">
+				<label for="password_show" style="width:max-content">Показать пароль</label>
+			</div>
+			<p><button type="button" onclick="Login()">Войти</button></p>
+		</div>
+		<script src="msgpack.min.js"></script>
+		<script src="loginform.js"></script>
+	</body>
+</html>

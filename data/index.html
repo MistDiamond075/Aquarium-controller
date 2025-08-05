@@ -1,0 +1,77 @@
+<html>
+	<head lang="ru">
+		<title>Controller config</title>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<link rel="stylesheet nofollow" href="style.css">
+	</head>
+	<body>
+		<span class="main-title">Настройки</span>
+		<div class="server-info-zone">
+			<button type="button" onclick="Logout()">Выйти</button>
+			<span class="form-title">Текущие настройки</span>
+			<div class="server-info" id="server_info_messages">
+				<span class="server-info-content" id="sv_info_content">--</span>				
+			</div>
+			<button type="button" id="sv_info_btn" style="align-self:center;margin-top:5px" onclick="getServerInfo()">Обновить</button>
+		</div>
+		<br>
+		<div class="forms">
+		<div class="form">
+		<form id="set_time_form">
+			<span class="form-title">Параметры времени</span>
+			<p>
+			<label for="time_form_input" style="align-self:center">Задать время</label>
+			<br>
+			<input type="time" name="newtime" id="time_form_input" class="input-time" required>
+			</p>
+			<p><button type="button" id="time_form_btn" onclick="updTime()">Сохранить</button></p>
+		</form>
+		</div>
+		<div class="form">
+		<form id="set_wifi_form">
+			<span class="form-title">Параметры wifi</span>
+			<p><input type="text" name="newwifissid" id="wifi_form_ssid_input" class="input-text" placeholder="Имя сети..."></p>
+			<p><input type="text" name="newwifipass" id="wifi_form_password_input" class="input-text" placeholder="Пароль..."></p>
+			<p><button type="button" id="wifi_form_btn" onclick="updWifi()">Сохранить</button></p>
+		</form>
+		</div>
+		<div class="form">
+		<form id="set_profile_form">
+			<span class="form-title">Параметры профиля</span>
+			<p style="display:flex;flex-wrap: nowrap;flex-direction: row;">
+			<select required name="profileselector" id="profile_form_profile_selector" style="pointer-events: all;">
+				<option value="profile1" style="display:block" >Профиль 1</option>
+				<option value="profile2" style="display:block">Профиль 2</option>
+				<option value="profile3" style="display:block" >Профиль 3</option>
+				<option value="profile4" style="display:block" >Профиль 4</option>
+			</select>
+			<input type="checkbox" name="showprofileall" value="false" id="set_profile_form_show_profile_all" style="cursor:pointer">
+				<label for="set_profile_form_show_profile_all" style="align-self:center;cursor:pointer">Применить ко всем профилям</label>
+			</p>
+			<p style="display:flex;flex-wrap: nowrap;flex-direction: row;">
+					<select required name="colorselector" id="profile_form_color_selector" style="display:block;pointer-events: all">
+						<option value="red" style="display:block" >Красный</option>
+						<option value="green" style="display:block" >Зелёный</option>
+						<option value="blue" style="display:block" >Синий</option>
+						<option value="white" style="display:block" >Белый</option>
+					</select>
+				<input type="checkbox" name="showcolorall" value="false" id="set_profile_form_show_color_all" style="cursor:pointer">
+				<label for="set_profile_form_show_color_all" style="align-self:center;cursor:pointer">Применить ко всем цветам</label>
+			</p>
+			<p><input type="time" name="newtime" id="profile_form_timer_input" class="input-time" required></p>
+			<p><input type="text" name="newprofilebrigth" id="profile_form_bright_input" class="input-text" required placeholder="Яркость..."></p>
+			<p><button type="button" id="time_form_btn" onclick="updProfile()">Сохранить</button></p>
+		</form>
+		</div>
+		<div class="form">
+			<span class="form-title">Параметры пользователя</span>
+			<p><input type="text" id="user_form_name_input" class="input-text" placeholder="Имя пользователя..."></p>
+			<p><input type="text" id="user_form_password_input" class="input-text" placeholder="Пароль..."></p>
+			<p><button type="button" id="user_form_btn" onclick="updUser()">Сохранить</button></p>
+		</div>
+		</div>
+		<script src="msgpack.min.js"></script>
+		<script src="main.js"></script>
+	</body>
+</html>
